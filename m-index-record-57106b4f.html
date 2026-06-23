@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>米兰体育 · 品牌落地介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #f6f9fc;
+      color: #1a2b3c;
+      line-height: 1.6;
+      padding: 0;
+    }
+
+    .wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(145deg, #0b2d45 0%, #134b5e 55%, #1f6d7a 100%);
+      border-radius: 0 0 48px 48px;
+      padding: 60px 20px 48px;
+      text-align: center;
+      color: white;
+      margin: 0 -20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      height: 80px;
+      background: radial-gradient(ellipse at center, rgba(34, 168, 156, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 span {
+      color: #7bd5c5;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 24px;
+      opacity: 0.9;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(4px);
+      padding: 6px 20px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      border: 1px solid rgba(123, 213, 197, 0.3);
+      color: #d5f3ed;
+    }
+
+    /* 网格卡片 — 优势区 */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin: 48px 0 40px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 28px 22px;
+      box-shadow: 0 8px 20px rgba(0, 30, 30, 0.06);
+      transition: all 0.2s ease;
+      border: 1px solid rgba(34, 168, 156, 0.08);
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(11, 45, 69, 0.10);
+      border-color: rgba(34, 168, 156, 0.25);
+    }
+
+    .card .icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: inline-block;
+      background: #e6f2ef;
+      width: 52px;
+      height: 52px;
+      line-height: 52px;
+      text-align: center;
+      border-radius: 16px;
+      color: #0b5a5a;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #0b2d45;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #3d5a6b;
+    }
+
+    /* 说明区 */
+    .intro-section {
+      background: white;
+      border-radius: 32px;
+      padding: 40px 32px;
+      margin: 20px 0 40px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e2edf0;
+    }
+
+    .intro-section h2 {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #0b2d45;
+      margin-bottom: 20px;
+      border-left: 6px solid #22a89c;
+      padding-left: 18px;
+    }
+
+    .intro-section p {
+      margin-bottom: 16px;
+      color: #1e3a4a;
+    }
+
+    .intro-section .highlight {
+      background: #e6f5f0;
+      padding: 2px 8px;
+      border-radius: 8px;
+      font-weight: 500;
+      color: #09594f;
+    }
+
+    /* FAQ 摘要 */
+    .faq-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin: 24px 0 32px;
+      padding: 20px 0;
+      border-top: 1px solid #d4e3e8;
+      border-bottom: 1px solid #d4e3e8;
+    }
+
+    .faq-item {
+      flex: 1 1 220px;
+    }
+
+    .faq-item .q {
+      font-weight: 600;
+      color: #0b2d45;
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .faq-item .a {
+      color: #446473;
+      font-size: 0.92rem;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      text-align: center;
+      padding: 40px 20px 28px;
+      border-top: 1px solid #d4e3e8;
+      margin-top: 20px;
+    }
+
+    .footer-links p {
+      color: #3c5a67;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-links .inline-link {
+      background: #1f6d7a;
+      color: white;
+      padding: 10px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+
+    .footer-links .inline-link:hover {
+      background: #0b4d5a;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      font-size: 0.85rem;
+      color: #6c8793;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .intro-section h2 {
+        font-size: 1.45rem;
+      }
+
+      .card {
+        padding: 22px 16px;
+      }
+
+      .faq-summary {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+
+    @media (min-width: 1000px) {
+      .grid-cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* 小装饰 */
+    .accent-dot {
+      color: #22a89c;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- hero 区 -->
+    <section class="hero">
+      <div class="badge">运动 · 信息 · 一体化</div>
+      <h1>不止是数据 · <span>米兰体育</span></h1>
+      <p>快速识别平台定位：聚合赛事信息、运动资讯与实用工具，为体育爱好者提供清晰直达的聚合页面。</p>
+    </section>
+
+    <!-- 优势区：网格卡片 -->
+    <div class="grid-cards">
+      <div class="card">
+        <div class="icon">📋</div>
+        <h3>信息聚合</h3>
+        <p>赛事动态、运动百科、实时榜单，多维度内容整合在一个界面，减少反复跳转。</p>
+      </div>
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3>轻量浏览</h3>
+        <p>页面结构经过梳理，优先展示重点板块，移动端适配友好，加载轻快。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🧠</div>
+        <h3>场景导览</h3>
+        <p>按运动类型、资讯热度、工具需求分类索引，帮助用户快速定位感兴趣的内容。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔗</div>
+        <h3>直连入口</h3>
+        <p>主站链接清晰可见，不遮挡不干扰，方便深入了解与使用。</p>
+      </div>
+      <div class="card">
+        <div class="icon">📊</div>
+        <h3>客观呈现</h3>
+        <p>内容基于实际资源整理，不夸大功能，不虚构数据，注重信息实用性。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🔄</div>
+        <h3>持续更新</h3>
+        <p>页面内容与板块跟随运动热点和用户反馈定期优化，保持信息新鲜度。</p>
+      </div>
+    </div>
+
+    <!-- 说明区：从用户识别用途切入 -->
+    <section class="intro-section">
+      <h2>如何快速识别 <span class="accent-dot">·</span> 米兰体育的用途</h2>
+      <p>当你首次接触一个体育类站点，通常关注三个问题：这里有什么信息？是否容易找到？是否值得信赖？<strong class="highlight">米兰体育</strong>的页面设计以信息密度和内容分类为重心，首页集中展示多个运动项目的最新动态、基础数据以及相关解读，而非单一的运动直播或博彩导向。</p>
+      <p>用户可以通过导航标签、卡片聚合以及简洁的分类区，迅速判断该页面是否覆盖自己关心的运动领域。整个界面使用蓝绿色作为识别色，配合卡片式布局，降低视觉噪音，让<strong class="highlight">米兰体育</strong>的定位更接近“运动信息聚合站”而非其他垂直平台。</p>
+      <p>如果你希望进一步了解平台提供的具体服务，可以直接访问 <a href="https://m-index-milansports.com" style="color:#1f6d7a; font-weight:600; text-decoration:underline; text-underline-offset:4px;">米兰体育</a> 查看完整内容结构。页面遵循克制的信息呈现原则，不堆砌横幅或诱导按钮，每一类内容的入口都清晰可辨。</p>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-summary">
+      <div class="faq-item">
+        <div class="q">❓ 米兰体育提供直播吗？</div>
+        <div class="a">页面主要聚合赛事资讯、数据与工具，不直接提供流媒体直播服务。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">❓ 内容更新频率如何？</div>
+        <div class="a">根据主流赛事周期和运动热点进行更新，保持信息时效性。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">❓ 是否需要注册？</div>
+        <div class="a">浏览聚合内容无需注册，部分工具类功能可能需登录使用。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">❓ 移动端体验如何？</div>
+        <div class="a">采用响应式设计，卡片与导航针对小屏优化，操作顺手。</div>
+      </div>
+    </div>
+
+    <!-- 底部链接 + 品牌锚点 -->
+    <div class="footer-links">
+      <p>想一站式浏览运动信息？前往 <a href="https://m-index-milansports.com" class="inline-link">米兰体育</a> 探索更多。</p>
+      <div class="footer-note">
+        <span>页面说明 · 本介绍页仅用于展示品牌定位与内容方向，不构成服务承诺。</span>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
